@@ -30,5 +30,6 @@
     "jest-puppeteer": "^5.0.4",
     "nodemon": "^1.19.2",
     "prettier": "^1.18.2"
-  }
+  },
+  "packageManager": "yarn@4.12.0"
 }
