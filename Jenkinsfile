@@ -11,13 +11,25 @@ pipeline {
 
     stages {
         stage('Build') {
+            agent {
+                docker {
+                    image 'node:20-alpine'
+                    reuseNode true
+                }
+            }
             steps {
                 echo 'Building the application...'
-                sh 'npm install'
+                sh 'npm ci'
             }
         }
 
         stage('Test') {
+            agent {
+                docker {
+                    image 'node:20-alpine'
+                    reuseNode true
+                }
+            }
             steps {
                 echo 'Running unit tests...'
                 sh 'npm test'
